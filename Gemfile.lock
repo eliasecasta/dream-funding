@@ -163,6 +163,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    schema_to_scaffold (0.8.0)
+      activesupport (>= 3.2.1)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -221,6 +223,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
+  schema_to_scaffold
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
