@@ -11,3 +11,13 @@ config/master.key
 # Ignore node_modules
 node_modules/
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
