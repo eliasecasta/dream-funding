@@ -7,7 +7,7 @@ email:string
 password:string
 icon:string
 
-Table Transfer
+Table Donation
 
 AuthorId:integer/user:references (foreign key of the user doing the transfer to the Dream) so user:references
 Name:string
