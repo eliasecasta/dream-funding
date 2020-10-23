@@ -1,6 +1,7 @@
 class DreamsController < ApplicationController
   before_action :set_dream, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  
   # GET /dreams
   # GET /dreams.json
   def index
