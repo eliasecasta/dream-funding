@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 # gem 'bullet' To test n+1 problems when the project is done
+# gem 'goldiloader' # To autofix n+1 problems
 gem 'schema_to_scaffold'
 
 # Use Active Storage variant
