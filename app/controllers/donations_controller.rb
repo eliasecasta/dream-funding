@@ -14,7 +14,9 @@ class DonationsController < ApplicationController
 
   # GET /donations/new
   def new
-    @donation = Donation.new
+    # @donation = Donation.new
+    @donation = Dream.find_by_id(params[:dream_id]).donations.new
+    pp @donation
   end
 
   # GET /donations/1/edit
@@ -26,10 +28,11 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.user_id = current_user.id
+    @donation.dream_id =  Dream.find_by_id(params[:dream_id]).id
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
+        format.html { redirect_to dream_path(@donation.dream_id), notice: 'Donation was successfully created.' }
         format.json { render :show, status: :created, location: @donation }
       else
         format.html { render :new }
@@ -70,6 +73,6 @@ class DonationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donation_params
-      params.require(:donation).permit(:name, :amount, :dream_id)
+      params.require(:donation).permit(:name, :amount)
     end
 end

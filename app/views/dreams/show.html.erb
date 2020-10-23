@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back', dreams_path %>
+<br>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @dream.name %>
@@ -19,8 +22,9 @@
   <%= @dream.user.name %>
 </p>
 
+
+
 <%# TODO: Display name, description, date and ammount donated by x user to the Dream %>
 
-<%= link_to "Make a Donation", path %>
+<%= link_to "Make a Donation", new_dream_donation_path(dream_id: @dream) %>
 <%= link_to 'Edit', edit_dream_path(@dream) %>
-<%= link_to 'Back', dreams_path %>

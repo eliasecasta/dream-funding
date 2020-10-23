@@ -1,7 +1,7 @@
 class DreamsController < ApplicationController
   before_action :set_dream, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /dreams
   # GET /dreams.json
   def index
@@ -27,6 +27,8 @@ class DreamsController < ApplicationController
   def create
     @dream = Dream.new(dream_params)
     @dream.user_id = current_user.id
+    
+
     respond_to do |format|
       if @dream.save
         format.html { redirect_to @dream, notice: 'Dream was successfully created.' }
@@ -71,5 +73,9 @@ class DreamsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def dream_params
       params.require(:dream).permit(:name, :money_objective, :icon)
+    end
+
+    def donation_params
+      params.require(:donation).permit(:name, :amount, :dream_id)
     end
 end
