@@ -3,6 +3,8 @@ class Donation < ApplicationRecord
 
   # belongs_to :author, class_name: :User
   belongs_to :author, class_name: "User", foreign_key: "user_id"
+  # delegate :user_id, to: :dream, prefix: true
+  # delegate :name, to: :user, prefix: true
   belongs_to :dream
 
   validates :name, presence: true, length: {minimum:1, maximum:255}

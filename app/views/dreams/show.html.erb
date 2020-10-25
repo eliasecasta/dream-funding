@@ -13,6 +13,11 @@
 </p>
 
 <p>
+  <strong>Money collected:</strong>
+  <%= @dream.donations.dreams_sum_amount(@dream.id) %>
+</p>
+
+<p>
   <strong>Icon:</strong>
   <%= @dream.icon %>
 </p>
@@ -22,6 +27,17 @@
   <%= @dream.user.name %>
 </p>
 
+<p>
+  <strong>People that have donated:</strong>
+  <br>
+  <% @dream.donations.each do |donation| %>
+    <span>Donor: <%= donation.author.name.upcase %> </span>
+    <span>Message: <%= donation.name %> </span>
+    <span>Donation amount: $ <%= donation.amount %> </span>
+    <span>Donated at: <%= donation.created_at %> </span>
+    <br>
+  <% end %>
+</p>
 
 
 <%# TODO: Display name, description, date and ammount donated by x user to the Dream %>
