@@ -2,4 +2,4 @@
 
 <%= render 'form', donation: @donation %>
 
-<%= link_to 'Back', dream_donations_path %>
+<%= link_to 'Back', dream_path(@donation.dream_id) %>
