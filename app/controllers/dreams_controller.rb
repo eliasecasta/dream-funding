@@ -27,7 +27,6 @@ class DreamsController < ApplicationController
   def create
     @dream = Dream.new(dream_params)
     @dream.user_id = current_user.id
-    
 
     respond_to do |format|
       if @dream.save

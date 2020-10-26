@@ -1,8 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<%# <h1>My Dreams</h1> %>
+<h1>My Dreams</h1>
 <%# TOOD: Also show the ones that I have created %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Money objective</th>
+      <th>Icon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% current_user.dreams.each do |dream| %>
+      <tr>
+        <td><%= dream.name %></td>
+        <td>$<%= number_to_currency(dream.money_objective, precision: 0, unit: "USD", format: "%n %u") %></td>
+        <td><%= dream.icon %></td>
+        <td><%= link_to 'Show', dream %></td>
+        <td><%= link_to 'Edit', edit_dream_path(dream) %></td>
+        <td><%= link_to 'Destroy', dream, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
 
 <h1>Other's Dreams</h1>
 
@@ -12,7 +35,6 @@
       <th>Name</th>
       <th>Money objective</th>
       <th>Icon</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,9 +43,8 @@
     <% @dreams.each do |dream| %>
       <tr>
         <td><%= dream.name %></td>
-        <td><%= dream.money_objective %></td>
+        <td>$<%= number_to_currency(dream.money_objective, precision: 0, unit: "USD", format: "%n %u") %></td>
         <td><%= dream.icon %></td>
-        <td><%= dream.user_id %></td>
         <td><%= link_to 'Show', dream %></td>
         <td><%= link_to 'Edit', edit_dream_path(dream) %></td>
         <td><%= link_to 'Destroy', dream, method: :delete, data: { confirm: 'Are you sure?' } %></td>

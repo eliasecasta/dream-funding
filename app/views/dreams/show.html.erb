@@ -9,13 +9,17 @@
 
 <p>
   <strong>Money objective:</strong>
-  <%= @dream.money_objective %>
+  $<%= number_to_currency(@dream.money_objective, precision: 0, unit: "USD", format: "%n %u") %>
 </p>
 
 <p>
   <strong>Money collected:</strong>
-  <%= @dream.donations.dreams_sum_amount(@dream.id) %>
+  $<%= number_to_currency(@dream.donations.dreams_sum_amount(@dream.id), precision: 0, unit: "USD", format: "%n %u") %>
 </p>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= number_to_percentage(percentage_collected(@dream), precision: 0) %>">Progress <%= number_to_percentage(percentage_collected(@dream), precision: 0)%></div>
+</div>
 
 <p>
   <strong>Icon:</strong>
@@ -24,7 +28,7 @@
 
 <p>
   <strong>Who is asking for donations:</strong>
-  <%= @dream.user.name %>
+  <%= @dream.user.name.upcase %>
 </p>
 
 <p>
@@ -33,14 +37,11 @@
   <% @dream.donations.each do |donation| %>
     <span>Donor: <%= donation.author.name.upcase %> </span>
     <span>Message: <%= donation.name %> </span>
-    <span>Donation amount: $ <%= donation.amount %> </span>
-    <span>Donated at: <%= donation.created_at %> </span>
+    <span>Donation amount: $<%= number_to_currency(donation.amount, precision: 0, unit: "USD", format: "%n %u") %> </span>
+    <span>Donated at: <%= donation.created_at.to_time.strftime('%B %e %Y at %l:%M %p') %> </span>
     <br>
   <% end %>
 </p>
-
-
-<%# TODO: Display name, description, date and ammount donated by x user to the Dream %>
 
 <%= link_to "Make a Donation", new_dream_donation_path(dream_id: @dream) %>
 <%= link_to 'Edit', edit_dream_path(@dream) %>
