@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {minimum:5, maximum:20}
 
+  has_one_attached :avatar
+
 end
 
 
