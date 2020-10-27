@@ -8,13 +8,30 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'sidebar', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <%= link_to  "Dreams", dreams_path %>
-  <%end%>
+
+    <% if user_signed_in? %>
+
+      <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" onclick="closeNav()" class="closebtn" id="closeBtn">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <%= link_to  "Dreams", dreams_path %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    </div>
+
+    <div id="main">
+      <button id="openBtn" onclick="openNav()" class="openbtn">&#9776; </button>
+    </div>
+
+    <%end%>
+
+  <div class="container-fluid">
     <%= yield %>
+  </div>
+
   </body>
 </html>
