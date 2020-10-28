@@ -78,6 +78,32 @@
   padding: 20px;
 }
 
+.log-in {
+
+  *, a {
+    font-size: 4.5vw;
+  }
+
+  .remember-me{
+    height: .8em;
+    width: .8em;
+  }
+
+  .responsive-width {
+    font-size: 5vw;
+  }
+
+  img {
+    margin-top: 40vh;
+  }
+
+  .credentials {
+    display: block;
+    width: 100%;
+  }
+
+}
+
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
