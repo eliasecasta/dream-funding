@@ -21,7 +21,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg, #399ae5 0%,#0d4e99 100%);
+  background: linear-gradient(45deg, #399ae5 0%, #0d4e99 100%);
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
@@ -39,7 +39,7 @@
     color: #f1f1f1;
   }
 
- .closebtn {
+  .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -61,7 +61,6 @@
     height: 300px;
     width: 300px;
   }
-
 }
 
 .openbtn {
@@ -74,19 +73,19 @@
 }
 
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 0.5s;
   padding: 20px;
 }
 
 .log-in {
-
-  *, a {
+  *,
+  a {
     font-size: 4.5vw;
   }
 
-  .remember-me{
-    height: .8em;
-    width: .8em;
+  .remember-me {
+    height: 0.8em;
+    width: 0.8em;
   }
 
   .responsive-width {
@@ -101,10 +100,33 @@
     display: block;
     width: 100%;
   }
+}
 
+.sign-up {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .sign-up-credentials {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }
