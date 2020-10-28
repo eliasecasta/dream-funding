@@ -16,24 +16,38 @@
     <% if user_signed_in? %>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 d-flex text-center ">
+          <div class="col-12">
             <div id="mySidebar" class="sidebar">
-             <div>
-              <% if current_user.avatar.attached? %>
-                  <%= image_tag current_user.avatar, height:500, width:500 %>
-                  <p class="mt-3"> <%= current_user.name.titlecase %> </p>
-              <% end %>
-              </div>
+              <div class="text-center">
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag current_user.avatar, class:"rounded-circle" %>
+                <% else %>
+                  <%= image_tag "saitama.jpg", class:"rounded-circle" %>
+                <% end %>
+                <p class="mt-3"> <%= current_user.name.titlecase %> </p>
 
-              <a href="javascript:void(0)" onclick="closeNav()" class="closebtn" id="closeBtn">&times;</a>
-              <%= link_to  "Edit Account", edit_user_registration_path %>
-              <%= link_to  "My Dreams" %>
-              <%= link_to  "Dreams", dreams_path %>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </div>
+              <a href="javascript:void(0)" onclick="closeNav()" class="closebtn" id="closeBtn"><i class="fa fa-times"></i></a>
+              <%= link_to edit_user_registration_path do %>
+                <%= fa_icon "cog", class:"ml-5" %> Edit Account
+              <% end %>
+              <hr />
+              <%= link_to dreams_path do %> <!-- TODO: Split dreams into my dreams and others dreams -->
+                <%= fa_icon "money-check-alt", class:"ml-5" %> My Dreams
+              <% end %>
+              <hr />
+              <%= link_to dreams_path do %>
+                <%= fa_icon "hand-holding-usd", class:"ml-5" %> Other's Dreams
+              <% end %>
+              <hr />
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                <%= fa_icon "sign-out-alt", class:"ml-5" %> Sign Out
+              <% end %>
+              <hr />
             </div>
 
             <div id="main">
-              <button id="openBtn" onclick="openNav()" class="openbtn">&#9776; </button>
+              <button id="openBtn" onclick="openNav()" class="openbtn"><i class="fas fa-bars"></i></button>
             </div>
           </div>
         </div>
@@ -42,7 +56,6 @@
     <%end%>
 
   <div class="container-fluid text-center">
-    <i class="fas fa-times"></i>
     <%= yield %>
   </div>
 

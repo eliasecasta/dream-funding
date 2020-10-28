@@ -25,6 +25,7 @@ gem 'devise'
 # gem 'bullet' To test n+1 problems when the project is done
 # gem 'goldiloader' # To autofix n+1 problems
 gem 'schema_to_scaffold'
+gem "font-awesome-rails"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
