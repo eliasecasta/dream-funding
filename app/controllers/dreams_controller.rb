@@ -71,7 +71,7 @@ class DreamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dream_params
-      params.require(:dream).permit(:name, :money_objective, :icon)
+      params.require(:dream).permit(:name, :money_objective, :icon, :image)
     end
 
     def donation_params

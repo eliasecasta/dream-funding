@@ -22,8 +22,11 @@
 </div>
 
 <p>
-  <strong>Icon:</strong>
-  <%= @dream.icon %>
+  <% if @dream.image.attached? %>
+    <%= image_tag @dream.image, height:"50px" %>
+  <% else %>
+    <%= image_tag "no_image.png", height:"50px" %>
+  <% end %>
 </p>
 
 <p>
