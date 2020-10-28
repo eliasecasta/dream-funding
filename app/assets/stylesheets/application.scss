@@ -122,6 +122,26 @@
   }
 }
 
+.edit-user {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .sign-up-credentials {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
