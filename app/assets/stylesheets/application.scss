@@ -149,12 +149,23 @@
       font-size: 3em;
     }
   }
+
+  .card{
+    font-size: 2em;
+  }
+
+  a {
+    font-size: 3em;
+  }
+
 }
 
 .fa-bars {
   color: white;
   height: 50px;
 }
+
+
 
 @media screen and (max-height: 450px) {
   .sidebar {
