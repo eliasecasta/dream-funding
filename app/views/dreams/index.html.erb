@@ -1,9 +1,12 @@
-<div class="row">
-<div class="col-12">
+<div class="dreams-index text-center">
+
+<nav class="navbar navbar-dark bg-primary d-flex">
+  <div><%= render 'menu_button' %></div>
+  <h2 class="mr-5">Dreams</h2>
+  <i class="fas fa-search mr-5"></i>
+</nav>
 
 <p id="notice"><%= notice %></p>
-
-<%= render 'menu_button' %>
 
 <h1>My Dreams</h1>
 <%# TOOD: Also show the ones that I have created %>
@@ -70,5 +73,6 @@
 
 <%= link_to 'New Dream', new_dream_path %>
 
+</div>
 </div>
 </div>

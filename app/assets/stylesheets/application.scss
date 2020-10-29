@@ -142,6 +142,20 @@
   }
 }
 
+.dreams-index{
+  .navbar{
+    h2, .fa-search {
+      color: white;
+      font-size: 3em;
+    }
+  }
+}
+
+.fa-bars {
+  color: white;
+  height: 50px;
+}
+
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
