@@ -17,12 +17,8 @@
             <%= fa_icon "cog", class:"ml-5" %> Edit Account
           <% end %>
           <hr />
-          <%= link_to dreams_path do %> <!-- TODO: Split dreams into my dreams and others dreams -->
-            <%= fa_icon "money-check-alt", class:"ml-5" %> My Dreams
-          <% end %>
-          <hr />
           <%= link_to dreams_path do %>
-            <%= fa_icon "hand-holding-usd", class:"ml-5" %> Other's Dreams
+            <%= fa_icon "hand-holding-usd", class:"ml-5" %> Dreams
           <% end %>
           <hr />
           <%= link_to destroy_user_session_path, :method => :delete do %>
