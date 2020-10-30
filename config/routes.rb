@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'dreams#index'
 
   resources :donations, path: "dreams/donations"
-  resources :dreams do
-    resources :donations
+  resources :dreams, except: %i[delete edit] do
+    resources :donations, except: %i[delete edit index]
   end
 
 end
