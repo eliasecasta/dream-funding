@@ -1,85 +1,86 @@
 <div class="dream-show">
 
-	<nav class="navbar navbar-dark bg-primary d-flex align-content-center justify-content-between py-4">
-		<%= link_to 'Back', dreams_path %>
-		<h2>Dream Info</h2>
-		<div> <%= link_to "Donate", new_dream_donation_path(dream_id: @dream) %> </div>
-	</nav>
+  <nav class="navbar navbar-dark bg-primary d-flex align-content-center justify-content-between py-4">
+    <%= link_to 'Back', dreams_path %>
+    <h2>Dream Info</h2>
+    <div> <%= link_to "Donate", new_dream_donation_path(dream_id: @dream) %> </div>
+  </nav>
 
-	<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-	<div class="container-fluid">
+  <div class="container-fluid">
 
-		<div class="row">
+    <div class="row">
 
-			<div class="col-12">
-				<% if @dream.image.attached? %>
-					<%= image_tag @dream.image, width:"100%" %>
-				<% else %>
-					<%= image_tag "no_image.png", width:"100%" %>
-				<% end %>
-			</div>
+      <div class="col-12">
+        <% if @dream.image.attached? %>
+          <%= image_tag @dream.image, width:"100%" %>
+        <% else %>
+          <%= image_tag "no_image.png", width:"100%" %>
+        <% end %>
+      </div>
 
-			<div class="col-12 dream-details text-center">
-				<%= @dream.name %>
-				<p>
-					<strong>Money objective:</strong>
-					$<%= number_to_currency(@dream.money_objective, precision: 0, unit: "USD", format: "%n %u") %>
-				</p>
-				<p>
-					<strong>Money collected:</strong>
-					$<%= number_to_currency(@dream.donations.dreams_sum_amount(@dream.id), precision: 0, unit: "USD", format: "%n %u") %>
-				</p>
-				<div class="progress" style="height: 5vh ;">
-					<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= number_to_percentage(percentage_collected(@dream), precision: 0) %>">
-						<p>Progress: <%= number_to_percentage(percentage_collected(@dream), precision: 0)%></p>
-					</div>
-				</div>
-				<section class="d-flex by-at text-muted">
-					<div class="col-6">
-						<small>
-							<strong>By:</strong>
-							<%= @dream.user.name.upcase %>
-						</small>
-					</div>
-					<div class="col-6">
-						<small><%= @dream.created_at.to_time.strftime('%B %e %Y') %>
-						</div>
-				</section>
-			</div>
-		</div>
+      <div class="col-12 dream-details text-center">
+        <%= @dream.name %>
+        <p>
+          <strong>Money objective:</strong>
+          $<%= number_to_currency(@dream.money_objective, precision: 0, unit: "USD", format: "%n %u") %>
+        </p>
+        <p>
+          <strong>Money collected:</strong>
+          $<%= number_to_currency(@dream.donations.dreams_sum_amount(@dream.id), precision: 0, unit: "USD", format: "%n %u") %>
+        </p>
+        <div class="progress" style="height: 5vh ;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= number_to_percentage(percentage_collected(@dream), precision: 0) %>">
+            <p>Progress: <%= number_to_percentage(percentage_collected(@dream), precision: 0)%></p>
+          </div>
+        </div>
+        <section class="d-flex by-at text-muted">
+          <div class="col-6">
+            <small>
+              <strong>By:</strong>
+              <%= @dream.user.name.upcase %>
+            </small>
+          </div>
+          <div class="col-6">
+            <small><%= @dream.created_at.to_time.strftime('%B %e %Y') %>
+            </div>
+          </section>
+        </div>
+      </div>
 
-		<div class="col-12 donors mt-5">
-			<h1 class="text-center font-weight-bold mb-5">Donors</h1>
-			<% @dream.donations.each do |donation| %>
+      <div class="col-12 donors mt-5">
+        <h1 class="text-center font-weight-bold mb-5">Donors</h1>
+        
+        <% @dream.donations.each do |donation| %>
 
-			<div class="card mb-3" style="max-width: 100vw;">
-				<div class="row no-gutters">
-					<div class="col-md-4 d-flex align-content-center">
-						<% if donation.author.avatar.attached? %>
-							<%= image_tag donation.author.avatar, width:"100%", class:"rounded-circle " %>
-						<% else %>
-							<%= image_tag "saitama.jpg", width:"100%", class:"rounded-circle" %>
-						<% end %>
-					</div>
-					<div class="col-md-8">
-						<div class="card-body mt-3">
-							<p class="card-title text-center font-weight-bold"><%= donation.author.name.upcase%></p>
-							<p class="card-text ">Message: <%= donation.name %></p>
-						</div>
-						<div class="mt-3 ml-4">
-							<p class="card-text"><small>Donation amount: $<%= number_to_currency(donation.amount, precision: 0, unit: "USD", format: "%n %u") %></small></p>
-							<p> <small> Date: <%= donation.created_at.to_time.strftime('%B %e %Y at %l:%M %p') %></small></p>
-						</div>
-					</div>
-				</div>
-			</div>
+          <div class="card mb-3" style="max-width: 100vw;">
+            <div class="row no-gutters">
+              <div class="col-md-4 d-flex align-content-center">
+                <% if donation.author.avatar.attached? %>
+                  <%= image_tag donation.author.avatar, width:"100%", class:"rounded-circle " %>
+                <% else %>
+                  <%= image_tag "saitama.jpg", width:"100%", class:"rounded-circle" %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body mt-3">
+                  <p class="card-title text-center font-weight-bold"><%= donation.author.name.upcase%></p>
+                  <p class="card-text ">Message: <%= donation.name %></p>
+                </div>
+                <div class="mt-3 ml-4">
+                  <p class="card-text"><small>Donation amount: $<%= number_to_currency(donation.amount, precision: 0, unit: "USD", format: "%n %u") %></small></p>
+                  <p> <small> Date: <%= donation.created_at.to_time.strftime('%B %e %Y at %l:%M %p') %></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-			<% end %>
+        <% end %>
 
-		</div>
+      </div>
 
-	</div>
-	<%= link_to 'Donate now!', new_dream_donation_path(dream_id: @dream), class:"btn btn-success btn-lg btn-block mt-5 py-3 responsive-width" %>
+    </div>
+    <%= link_to 'Donate now!', new_dream_donation_path(dream_id: @dream), class:"btn btn-success btn-lg btn-block mt-5 py-3 responsive-width" %>
 
-</div>
+  </div>

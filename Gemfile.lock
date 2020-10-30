@@ -60,7 +60,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.4.8)
+    bootsnap (1.4.9)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
@@ -78,18 +78,34 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.4.4)
     erubi (1.9.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    formulaic (0.4.1)
+      activesupport
+      capybara
+      i18n
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    goldiloader (3.1.1)
+      activerecord (>= 4.2, < 6.1)
+      activesupport (>= 4.2, < 6.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -143,6 +159,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 6.0.3.4)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -162,6 +182,27 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-rails (4.0.1)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.9)
+      rspec-expectations (~> 3.9)
+      rspec-mocks (~> 3.9)
+      rspec-support (~> 3.9)
+    rspec-support (3.10.0)
     ruby-dap (0.1.3)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -179,6 +220,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -218,27 +261,36 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.2)
+  bootsnap
   byebug
   byebug-dap (~> 0.1.4)
-  capybara (>= 2.15)
+  capybara
+  database_cleaner
   devise
+  factory_bot_rails
+  faker
   font-awesome-rails
+  formulaic
+  goldiloader
   jbuilder (~> 2.7)
   listen (~> 3.2)
   meta_request
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
+  rails-controller-testing
+  rspec
+  rspec-rails
   sass-rails (>= 6)
   schema_to_scaffold
   selenium-webdriver
+  shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

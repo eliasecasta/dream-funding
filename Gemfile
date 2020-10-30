@@ -23,15 +23,17 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 # gem 'bullet' To test n+1 problems when the project is done
-# gem 'goldiloader' # To autofix n+1 problems
+gem 'goldiloader' # To autofix n+1 problems
 gem 'schema_to_scaffold'
 gem "font-awesome-rails"
+gem 'wdm' if Gem.win_platform?
+gem 'rails-controller-testing'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,10 +52,17 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'webdrivers', require: !ENV['SELENIUM_REMOTE_URL']
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'formulaic'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
