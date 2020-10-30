@@ -1,5 +1,42 @@
-<h1>New Dream</h1>
+<div class="dream-new">
 
-<%= render 'form', dream: @dream %>
+  <%= form_with(model: @dream, local: true) do |form| %>
 
-<%= link_to 'Back', dreams_path %>
+    <nav class="navbar navbar-dark bg-primary d-flex align-content-center justify-content-between py-4">
+      <%= link_to 'Back', dreams_path %>
+      <h1>New Dream</h1>
+      <div class="actions">
+        <%= form.submit "Create!" %>
+      </div>
+    </nav>
+
+    <% if @dream.errors.any? %>
+      <div id="error_explanation container-fluid">
+        <h2 class="col-12 bg-danger h2"><%= pluralize(@dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
+
+        <ul class="bg-danger">
+          <% @dream.errors.full_messages.each do |message| %>
+            <li class="h3"><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="dream-new-details text-center container-fluid">
+
+      <div class="field">
+        <p>Select an image for your Dream:</p>
+        <%= form.file_field :image, class:"overflow-auto" %>
+      </div>
+
+      <div class="field mt-5">
+        <%= form.text_field :name, placeholder:"Dream Title" %>
+      </div>
+
+      <div class="field">
+        <%= form.number_field :money_objective, placeholder:"Amount Required in USD" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

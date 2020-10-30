@@ -1,9 +1,39 @@
-<%= render 'menu_button' %>
+<div class="new-donation">
+	<%= form_for @donation, url: dream_donations_path do |form| %>
 
+		<nav class="navbar navbar-dark bg-primary d-flex align-content-center justify-content-between py-4">
+			<%= link_to 'Back', dream_path(@donation.dream_id) %>
+			<h1>New Donation</h1>
+			<div class="actions">
+				<%= form.submit "Donate!" %>
+			</div>
+		</nav>
 
+		<% if @donation.errors.any? %>
+			<div id="error_explanation container-fluid">
+				<h2 class="col-12 bg-danger h2"><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
 
-<h1>New Donation</h1>
+				<ul class="bg-danger">
+					<% @donation.errors.full_messages.each do |message| %>
+						<li class="col-12 bg-danger h3"><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 
-<%= render 'form', donation: @donation %>
+		<div class="container-fluid donation-details text-center">
+			<div class="field">
+				<%= form.label :name, 'Small message to the Dream author' %>
+				<br>
+				<%= form.text_field :name, placeholder:"Message" %>
+			</div>
 
-<%= link_to 'Back', dream_path(@donation.dream_id) %>
+			<div class="field">
+				<%= form.label :amount %>
+				<br>
+				<%= form.number_field :amount, placeholder:"Amount in USD" %>
+			</div>
+		</div>
+
+	<% end %>
+</div>

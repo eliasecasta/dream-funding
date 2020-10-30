@@ -1,9 +1,9 @@
 <%= form_with(model: dream, local: true) do |form| %>
   <% if dream.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
+    <div id="error_explanation container-fluid">
+      <h2 class="col-12 bg-danger h2"><%= pluralize(dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
 
-      <ul>
+      <ul class="bg-danger">
         <% dream.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class:"overflow-auto" %>
   </div>
 
   <div class="field">

@@ -142,22 +142,60 @@
   }
 }
 
-.dreams-index{
-  .navbar{
-    h2, .fa-search {
+.dreams-index {
+  .navbar {
+    h2,
+    .fa-search {
       color: white;
       font-size: 3em;
     }
   }
 
-  .card{
+  .card {
     font-size: 2em;
   }
 
   a {
     font-size: 3em;
   }
+}
 
+.dream-show {
+  .navbar {
+    h2,
+    .fa-search,
+    a {
+      color: white;
+      font-size: 3em;
+    }
+  }
+
+  .dream-details {
+    font-size: 3em;
+
+    .progress-bar {
+      p {
+        font-size: 3em;
+      }
+    }
+
+    .by-at {
+      font-size: 0.8em;
+    }
+  }
+
+  .donors {
+    h1 {
+      font-size: 4em;
+    }
+    .card {
+      font-size: 3em;
+    }
+  }
+
+  .responsive-width {
+    font-size: 5vw;
+  }
 }
 
 .fa-bars {
@@ -165,7 +203,44 @@
   height: 50px;
 }
 
+.new-donation {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
 
+  .donation-details {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}
+
+.dream-new {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .dream-new-details {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}
 
 @media screen and (max-height: 450px) {
   .sidebar {
