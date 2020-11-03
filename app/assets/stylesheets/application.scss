@@ -14,6 +14,49 @@
  *= require_self
  */
 
+.log-in {
+  *,
+  a {
+    font-size: 4.5vw;
+  }
+
+  .remember-me {
+    height: 0.8em;
+    width: 0.8em;
+  }
+
+  .responsive-width {
+    font-size: 5vw;
+  }
+
+  img {
+    margin-top: 40vh;
+  }
+
+  .credentials {
+    display: block;
+    width: 100%;
+  }
+}
+
+.dreams-index {
+  .navbar {
+    h2,
+    .fa-search {
+      color: white;
+      font-size: 3em;
+    }
+  }
+
+  .card {
+    font-size: 2em;
+  }
+
+  a {
+    font-size: 3em;
+  }
+}
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -77,37 +120,13 @@
   padding: 20px;
 }
 
-.log-in {
-  *,
-  a {
-    font-size: 4.5vw;
-  }
-
-  .remember-me {
-    height: 0.8em;
-    width: 0.8em;
-  }
-
-  .responsive-width {
-    font-size: 5vw;
-  }
-
-  img {
-    margin-top: 40vh;
-  }
-
-  .credentials {
-    display: block;
-    width: 100%;
-  }
-}
-
 .sign-up {
   .navbar {
     * {
       color: whitesmoke;
       font-size: 5vw;
     }
+
     input {
       background-color: transparent;
       border: none;
@@ -128,6 +147,7 @@
       color: whitesmoke;
       font-size: 5vw;
     }
+
     input {
       background-color: transparent;
       border: none;
@@ -139,24 +159,6 @@
       font-size: 5vw;
       width: 100%;
     }
-  }
-}
-
-.dreams-index {
-  .navbar {
-    h2,
-    .fa-search {
-      color: white;
-      font-size: 3em;
-    }
-  }
-
-  .card {
-    font-size: 2em;
-  }
-
-  a {
-    font-size: 3em;
   }
 }
 
@@ -188,6 +190,7 @@
     h1 {
       font-size: 4em;
     }
+
     .card {
       font-size: 3em;
     }
@@ -209,6 +212,7 @@
       color: whitesmoke;
       font-size: 5vw;
     }
+
     input {
       background-color: transparent;
       border: none;
@@ -229,11 +233,13 @@
       color: whitesmoke;
       font-size: 5vw;
     }
+
     input {
       background-color: transparent;
       border: none;
     }
   }
+
   .dream-new-details {
     * {
       font-size: 5vw;
@@ -246,6 +252,7 @@
   .sidebar {
     padding-top: 15px;
   }
+
   .sidebar a {
     font-size: 18px;
   }
