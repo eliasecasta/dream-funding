@@ -41,11 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the **dream-funding** project where users are able to create events and choose **who** to invite based on the **Eventbrite** model. In this project we practiced a lot the **Rails Associations**, we also had to use **Active Records** to make some data queries.
-
 This is the **dream-funding** Capstone project where users are able to donate to selfish causes from other users. The idea is based on GoFundMe but with a little twist. I was required to create a grouping system to showcase my Rails skills in this final project.
-
-
 
 ## Restrictions
 
