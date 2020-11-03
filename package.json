@@ -9,11 +9,12 @@
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "@fortawesome/fontawesome-free": "^5.15.1"
+
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
