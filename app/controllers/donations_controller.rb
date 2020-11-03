@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  before_action :set_donation, only: %i[show edit update destroy]
 
   # GET /donations
   # GET /donations.json
@@ -9,8 +9,7 @@ class DonationsController < ApplicationController
 
   # GET /donations/1
   # GET /donations/1.json
-  def show
-  end
+  def show; end
 
   # GET /donations/new
   def new
@@ -20,15 +19,14 @@ class DonationsController < ApplicationController
   end
 
   # GET /donations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /donations
   # POST /donations.json
   def create
     @donation = Donation.new(donation_params)
     @donation.user_id = current_user.id
-    @donation.dream_id =  Dream.find_by_id(params[:dream_id]).id
+    @donation.dream_id = Dream.find_by_id(params[:dream_id]).id
 
     respond_to do |format|
       if @donation.save
@@ -66,13 +64,14 @@ class DonationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_donation
-      @donation = Donation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def donation_params
-      params.require(:donation).permit(:name, :amount)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_donation
+    @donation = Donation.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def donation_params
+    params.require(:donation).permit(:name, :amount)
+  end
 end

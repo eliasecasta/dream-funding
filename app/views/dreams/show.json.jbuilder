@@ -1,1 +1,1 @@
-json.partial! "dreams/dream", dream: @dream
+json.partial! 'dreams/dream', dream: @dream

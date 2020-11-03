@@ -7,10 +7,7 @@ class User < ApplicationRecord
   has_many :donations, dependent: :destroy
   has_many :dreams, dependent: :destroy
 
-  validates :name, presence: true, length: {minimum:5, maximum:20}
+  validates :name, presence: true, length: { minimum: 5, maximum: 20 }
 
   has_one_attached :avatar
-
 end
-
-

@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_action :set_dream, only: [:show, :edit, :update, :destroy]
+  before_action :set_dream, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /dreams
@@ -10,8 +10,7 @@ class DreamsController < ApplicationController
 
   # GET /dreams/1
   # GET /dreams/1.json
-  def show
-  end
+  def show; end
 
   # GET /dreams/new
   def new
@@ -19,8 +18,7 @@ class DreamsController < ApplicationController
   end
 
   # GET /dreams/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /dreams
   # POST /dreams.json
@@ -64,17 +62,18 @@ class DreamsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dream
-      @dream = Dream.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def dream_params
-      params.require(:dream).permit(:name, :money_objective, :icon, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_dream
+    @dream = Dream.find(params[:id])
+  end
 
-    def donation_params
-      params.require(:donation).permit(:name, :amount, :dream_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def dream_params
+    params.require(:dream).permit(:name, :money_objective, :icon, :image)
+  end
+
+  def donation_params
+    params.require(:donation).permit(:name, :amount, :dream_id)
+  end
 end

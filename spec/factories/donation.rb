@@ -3,7 +3,7 @@ FactoryBot.define do
     author factory: :user
 
     name { 'Here you go some money' }
-    amount { 50000 }
+    amount { 50_000 }
     dream_id { 1 }
   end
 end

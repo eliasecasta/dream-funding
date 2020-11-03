@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DreamsController, type: :controller do
-  describe "Dream Controllers testing" do
+  describe 'Dream Controllers testing' do
     login_user
 
     it 'Should be able to log in and have a 200 status code' do
