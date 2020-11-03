@@ -29,6 +29,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [Mobile View](#mobile-view)
   * [Built With](#built-with)
   * [Rules](#rules)
   * [Usage](#usage)
@@ -42,6 +43,22 @@
 ## About The Project
 
 This is the **dream-funding** Capstone project where users are able to donate to selfish causes from other users. The idea is based on GoFundMe but with a little twist. I was required to create a grouping system to showcase my Rails skills in this final project.
+
+### Mobile view
+
+![screenshot](./app/assets/images/mobile.png)
+
+## Demo Link
+
+[Live Demo Link](https://enigmatic-mesa-94696.herokuapp.com/).
+
+## Video Explanation
+
+[Demo Video](https://www.loom.com/share).
+
+## Design Idea
+
+[Gregoire Vella](https://www.behance.net/gregoirevella).
 
 ## Restrictions
 
@@ -109,7 +126,6 @@ This project was built using these technologies and main gems:
 * Rails controller testing
 * Factory bot rails
 * Faker
-
 
 ## Potential future features
 - To take a cut from the donations and assign that money to a non-profit cause voted by the Dream Funding users.
