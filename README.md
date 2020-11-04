@@ -54,7 +54,7 @@ This is the **dream-funding** Capstone project where users are able to donate to
 
 ## Video Explanation
 
-[Demo Video](https://www.loom.com/share).
+[Demo Video](https://www.loom.com/share/5d88bff6fbe043b4b9742282c184c936).
 
 ## Design Idea
 
