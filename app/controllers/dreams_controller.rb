@@ -10,7 +10,9 @@ class DreamsController < ApplicationController
 
   # GET /dreams/1
   # GET /dreams/1.json
-  def show; end
+  def show
+    @donations = @dream.donations.includes(:author) # N+1 improvement for the Dreams show page
+  end
 
   # GET /dreams/new
   def new
