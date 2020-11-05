@@ -1,11 +1,8 @@
 class DonationsController < ApplicationController
-  before_action :set_donation, only: %i[show edit update destroy]
+  before_action :set_donation, only: %i[show update destroy]
 
   # GET /donations
   # GET /donations.json
-  def index
-    @donations = Donation.all
-  end
 
   # GET /donations/1
   # GET /donations/1.json
@@ -17,9 +14,6 @@ class DonationsController < ApplicationController
     @donation = Dream.find_by_id(params[:dream_id]).donations.new
     pp @donation
   end
-
-  # GET /donations/1/edit
-  def edit; end
 
   # POST /donations
   # POST /donations.json
@@ -50,16 +44,6 @@ class DonationsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @donation.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /donations/1
-  # DELETE /donations/1.json
-  def destroy
-    @donation.destroy
-    respond_to do |format|
-      format.html { redirect_to donations_url, notice: 'Donation was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
