@@ -1,0 +1,66 @@
+.log-in {
+  *,
+  a {
+    font-size: 4.5vw;
+  }
+
+  .remember-me {
+    height: 0.8em;
+    width: 0.8em;
+  }
+
+  .responsive-width {
+    font-size: 5vw;
+  }
+
+  img {
+    margin-top: 40vh;
+  }
+
+  .credentials {
+    display: block;
+    width: 100%;
+  }
+}
+
+.sign-up {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .sign-up-credentials {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}
+
+.edit-user {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .sign-up-credentials {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}

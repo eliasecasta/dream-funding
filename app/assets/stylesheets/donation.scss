@@ -1,0 +1,20 @@
+.new-donation {
+  .navbar {
+    * {
+      color: whitesmoke;
+      font-size: 5vw;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .donation-details {
+    * {
+      font-size: 5vw;
+      width: 100%;
+    }
+  }
+}
