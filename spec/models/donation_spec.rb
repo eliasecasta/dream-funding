@@ -8,7 +8,9 @@ RSpec.describe Donation, type: :model do
     end
     it 'Empty donation content should not be valid' do
       expect { create(:donation, name: '', amount: '') }.to(
-        raise_error(ActiveRecord::RecordInvalid)
+        raise_error(
+          ActiveRecord::RecordInvalid
+        )
       )
     end
     it 'Donation cannot be created by a blank user' do

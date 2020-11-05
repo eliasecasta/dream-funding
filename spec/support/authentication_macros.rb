@@ -12,8 +12,8 @@ module AuthenticationMacros
   end
 
   def create_users
-    user1 = create(:user, name: 'Elias')
-    user2 = create(:user, name: 'Daniel')
+    user1 = create(:user, name: 'Elias', email: 'test@test.com')
+    user2 = create(:user, name: 'Daniel', email: 'test@test.com')
 
     [user1, user2]
   end
