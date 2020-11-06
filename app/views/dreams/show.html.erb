@@ -3,7 +3,7 @@
   <nav class="navbar navbar-dark bg-primary d-flex align-content-center justify-content-between py-4">
     <%= link_to 'Back', dreams_path %>
     <h2>Dream Info</h2>
-    <div> <%= link_to "Donate", new_dream_donation_path(dream_id: @dream) %> </div>
+    <div> <%= link_to "Donate", new_dream_donation_path(dream_id: @dream), class:"button bg-success rounded px-3" %> </div>
   </nav>
 
   <p id="notice"><%= notice %></p>
