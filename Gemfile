@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'cloudinary'
 gem 'devise'
 # gem 'bullet' To test n+1 problems when the project is done
 gem 'font-awesome-rails'
@@ -28,8 +29,8 @@ gem 'goldiloader' # To autofix n+1 problems
 gem 'rails-controller-testing'
 gem 'rubocop', '~>0.81.0'
 gem 'schema_to_scaffold'
+
 gem 'wdm' if Gem.win_platform?
-gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
