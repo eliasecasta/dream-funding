@@ -29,6 +29,7 @@ gem 'rails-controller-testing'
 gem 'rubocop', '~>0.81.0'
 gem 'schema_to_scaffold'
 gem 'wdm' if Gem.win_platform?
+gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -14,7 +14,7 @@
     <div class="container-fluid sign-up-credentials mt-5">
       <div class="field">
         Select a profile Image:
-        <%= f.file_field :avatar, class:"overflow-auto" %>
+        <%= f.file_field :avatar, direct_upload: true, class:"overflow-auto" %>
       </div>
       <br>
       <div class="field">
