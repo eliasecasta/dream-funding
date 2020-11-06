@@ -15,11 +15,14 @@
     font-size: 3em;
   }
 
-  .go-to-dream, .go-to-dream:link, .go-to-dream:hover{
-      font-size: 1em;
-      color: inherit;
-      text-decoration: inherit;
+  .go-to-dream,
+  .go-to-dream:link,
+  .go-to-dream:hover {
+    font-size: 1em;
+    color: inherit;
+    text-decoration: inherit;
   }
+
   img {
     width: 100%;
   }
@@ -62,11 +65,13 @@
   .responsive-width {
     font-size: 5vw;
   }
+
   img {
     width: 100%;
   }
+
   .rounded-avatar {
-    img{
+    img {
       border-radius: 50%;
       height: 100%;
     }
