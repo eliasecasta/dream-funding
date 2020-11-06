@@ -14,7 +14,7 @@
 
   <h3 align="center">Rails Project --> dream-funding<h3>
   <p align="center">
-    <a href="https://github.com/e71az/dream-funding"><strong>Explore the docs »</strong></a>
+    <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     -
@@ -86,6 +86,10 @@ To get a local copy up and running follow these simple example steps:
 ```
 
 - Run
+
+```bash
+  $ rails db:create
+```
 
 ```bash
   $ rails db:migrate
