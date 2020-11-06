@@ -20,6 +20,9 @@
       color: inherit;
       text-decoration: inherit;
   }
+  img {
+    width: 100%;
+  }
 }
 
 .dream-show {
@@ -58,6 +61,15 @@
 
   .responsive-width {
     font-size: 5vw;
+  }
+  img {
+    width: 100%;
+  }
+  .rounded-avatar {
+    img{
+      border-radius: 50%;
+      height: 100%;
+    }
   }
 }
 
