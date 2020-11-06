@@ -7,7 +7,7 @@ module DreamsHelper
     image_tag(dream.image.attached? ? dream.image : 'no_image.png')
   end
 
-  def avatar?(donation)
-    image_tag(donation.avatar.attached? ? donation.avatar : 'saitama.jpg')
+  def avatar?(current_user)
+    image_tag(current_user.avatar.attached? ? current_user.avatar : 'saitama.jpg')
   end
 end
