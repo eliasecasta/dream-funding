@@ -1,0 +1,73 @@
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #399ae5 0%, #0d4e99 100%);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 4em;
+    color: lightgray;
+    display: block;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #f1f1f1;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  p {
+    color: lightgray;
+    font-size: 3em;
+  }
+
+  hr {
+    width: 55%;
+    background-color: lightgray;
+  }
+
+  img {
+    width: 50%;
+    border-radius: 50%;
+    height: 100%;
+  }
+}
+
+.openbtn {
+  font-size: 4em;
+  cursor: pointer;
+  background-color: transparent;
+  color: #3778c2;
+  padding: 10px 15px;
+  border: none;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}

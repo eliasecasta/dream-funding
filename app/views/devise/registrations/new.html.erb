@@ -1,0 +1,37 @@
+<div class="text-center sign-up">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <nav class="navbar navbar-dark bg-primary d-flex">
+      <span><%= render "devise/shared/links" %></span>
+      <span>Register</span>
+      <div class="actions">
+        <%= f.submit "Sign up", class:"button bg-success rounded px-3" %>
+      </div>
+    </nav>
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="container-fluid sign-up-credentials mt-5">
+      <div class="field">
+        Select a profile Image:
+        <%= f.file_field :avatar, direct_upload: true, class:"overflow-auto" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, placeholder:"Full Name" %>
+      </div>
+
+      <div class="field">
+        <%= f.email_field :email, autocomplete: "email", placeholder:"Email" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password Confirmation" %>
+      </div>
+    </div>
+  <% end %>
+</div>
